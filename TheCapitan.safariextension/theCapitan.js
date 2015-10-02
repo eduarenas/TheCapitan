@@ -1,13 +1,15 @@
-var replacedNodes = [];
+var replacedNodes = {};
 
 function replaceString(string, replacement, element) {
     var nodes = element.childNodes;
     for (var n = 0; n < nodes.length; n++) {
-        if (nodes[n].nodeType == Node.TEXT_NODE && replacedNodes.indexOf(nodes[n]) < 0) {
+        replacedList = replacedNodes[string] || [];
+        replacedNodes[string] = replacedList;
+        if (nodes[n].nodeType == Node.TEXT_NODE && replacedList.indexOf(nodes[n]) < 0) {
             var r = new RegExp(string, 'g');
-            if (nodes[n].textContent.search(r) > 0) {
+            if (nodes[n].textContent.search(r) >= 0) {
                 nodes[n].textContent = nodes[n].textContent.replace(r, replacement);
-                replacedNodes.push(nodes[n]);
+                replacedList.push(nodes[n]);
             }
         }
         replaceString(string, replacement, nodes[n]);
