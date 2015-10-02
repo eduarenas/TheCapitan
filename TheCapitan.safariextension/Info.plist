@@ -16,8 +16,20 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>theCapitan.js</string>
+			</array>
+		</dict>
+	</dict>
 	<key>Description</key>
 	<string>Safari Extension that replaces instances of "El Capitan" with "The Capitán"</string>
+	<key>DeveloperIdentifier</key>
+	<string>J5CK52RK96</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
